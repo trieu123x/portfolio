@@ -59,7 +59,7 @@ const projects = [
     desc: 'Real-time 12-class garbage detection & classification. Two-stage pipeline: YOLOv8 for detection + ResNet50 for classification. Achieved mAP@50: 0.83, accuracy: 0.84.',
     tech: ['PyTorch', 'YOLOv8', 'ResNet50', 'Flask', 'OpenCV', 'CUDA'],
     icon: '♻️',
-    liveUrl: null,
+    liveUrl: 'https://huggingface.co/spaces/trieu123x/Garbage-Detection-and-Classification',
     codeUrl: 'https://github.com/trieu123x/Garbage_detect_and_classify',
     wip: false,
     images: [gbImg1, gbImg2, gbImg3, gbImg4],

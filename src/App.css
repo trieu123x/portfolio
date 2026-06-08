@@ -181,6 +181,9 @@ img { max-width: 100%; display: block; }
 }
 
 .nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-family: var(--font-sans);
   font-size: 1.25rem;
   font-weight: 700;
@@ -188,6 +191,16 @@ img { max-width: 100%; display: block; }
   transition: opacity var(--transition);
 }
 .nav__logo:hover { opacity: 0.85; }
+
+.nav__logo-icon {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.nav__logo-text {
+  letter-spacing: 0.02em;
+}
 
 .nav__list {
   display: flex;
