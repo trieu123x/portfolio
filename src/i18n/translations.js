@@ -54,6 +54,10 @@ const translations = {
           desc:  'Real-time 12-class garbage detection & classification. Two-stage pipeline: YOLOv8 for detection + ResNet50 for classification. Achieved mAP@50: 0.83, accuracy: 0.84.',
         },
         {
+          title: 'License Plate Recognition System',
+          desc:  'Two-stage AI pipeline for vehicle license plate detection and optical character recognition (OCR). Uses YOLOv8 for plate localization and a fine-tuned ResNet-50 classifier for character recognition. Includes deskewing logic and Vietnamese license plate syntax rules.',
+        },
+        {
           title: 'AI Pattern Detection',
           desc:  'Zero-shot technical symbol detector for engineering drawings. Uses multi-scale × multi-angle template matching (TM_CCOEFF_NORMED) + two-level NMS. No training data required — just 1 template image. Includes Gradio UI with spotlight visualization.',
         },
@@ -173,6 +177,10 @@ const translations = {
         {
           title: 'Phân loại rác thải',
           desc:  'Phát hiện & phân loại rác thải thời gian thực 12 lớp. Pipeline 2 tầng: YOLOv8 để phát hiện + ResNet50 để phân loại. Đạt mAP@50: 0.83, độ chính xác: 0.84.',
+        },
+        {
+          title: 'Nhận diện Biển số xe',
+          desc:  'Hệ thống AI hai giai đoạn để phát hiện biển số xe và nhận diện ký tự quang học (OCR). Sử dụng YOLOv8 để định vị biển số và bộ phân loại ResNet-50 được fine-tune để nhận diện ký tự. Tích hợp thuật toán xoay thẳng biển số và áp dụng luật cấu trúc biển số Việt Nam.',
         },
         {
           title: 'Phát hiện mẫu AI',

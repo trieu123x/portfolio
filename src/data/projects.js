@@ -24,6 +24,7 @@ import exImg2 from '../assets/exclusive2.png';
 import exImg3 from '../assets/exclusive3.png';
 
 import weatherImg1 from '../assets/weather.png';
+import lpImg1 from '../assets/license-plate.jpg';
 
 const projects = [
   {
@@ -77,6 +78,33 @@ const projects = [
         'Computer Vision': ['YOLOv8', 'ResNet50', 'OpenCV', 'CUDA'],
         'ML Framework': ['PyTorch', 'Ultralytics'],
         'Deployment': ['Flask', 'Python'],
+      },
+    },
+  },
+  {
+    id: 'license-plate-detector',
+    title: 'License Plate Recognition System',
+    desc: 'Two-stage AI pipeline for vehicle license plate detection and optical character recognition (OCR). Uses YOLOv8 for plate localization and a fine-tuned ResNet-50 classifier for character recognition. Includes deskewing logic and Vietnamese license plate syntax rules.',
+    tech: ['PyTorch', 'YOLOv8', 'ResNet50', 'OpenCV', 'Gradio', 'Python'],
+    icon: '🚗',
+    liveUrl: 'https://huggingface.co/spaces/trieu123x/License-plate',
+    codeUrl: 'https://huggingface.co/spaces/trieu123x/License-plate/tree/main',
+    wip: false,
+    images: [lpImg1],
+    detail: {
+      role: 'Solo Project',
+      highlights: [
+        'Built a two-stage LPR pipeline: YOLOv8 for plate detection + ResNet-50 for character OCR',
+        'Fine-tuned ResNet-50 on character datasets to achieve high OCR accuracy',
+        'Implemented plate deskewing logic using line fitting on character centroids',
+        'Applied Vietnamese license plate syntax rules (correcting letter/number confusion based on position)',
+        'Created a complete pre-processing workflow: adaptive thresholding, border cleaning, and connected component filtering',
+        'Deployed as an interactive web demo on Hugging Face Spaces using Gradio',
+      ],
+      stack: {
+        'Computer Vision': ['YOLOv8', 'OpenCV', 'Deskewing', 'Image Processing'],
+        'Deep Learning': ['PyTorch', 'ResNet50', 'Transfer Learning'],
+        'Deployment': ['Gradio', 'Hugging Face Spaces', 'Python'],
       },
     },
   },
