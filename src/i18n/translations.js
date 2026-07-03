@@ -28,7 +28,7 @@ const translations = {
       contactBtn: 'Contact me !!',
       githubBtn:  'my-git',
       status:     'Currently working on AI projects',
-      workingOn:  'Currently working on\n  K-Hospital AI',
+      workingOn:  'Currently working on\n  Garbage system',
     },
 
     /* ── Quote ── */
@@ -153,7 +153,7 @@ const translations = {
       contactBtn: 'Liên hệ ngay !!',
       githubBtn:  'GitHub của tôi',
       status:     'Đang làm việc trên các dự án AI',
-      workingOn:  'Đang phát triển\n  K-Hospital AI',
+      workingOn:  'Đang phát triển\n  Hệ thống phân loại rác',
     },
 
     /* ── Quote ── */
