@@ -25,8 +25,39 @@ import exImg3 from '../assets/exclusive3.png';
 
 import weatherImg1 from '../assets/weather.png';
 import lpImg1 from '../assets/license-plate.jpg';
+import awImg1 from '../assets/ai-workforce1.png';
 
 const projects = [
+  {
+    id: 'ai-workforce',
+    title: 'AI Workforce – Enterprise AI Platform',
+    desc: 'Multi-tenant enterprise management platform combining business modules with controlled AI assistants. Features HR management, RAG knowledge retrieval with pgvector + hybrid search, intent routing, RBAC, audit logging and Docker-based microservice architecture.',
+    tech: ['Python', 'FastAPI', 'Next.js', 'PostgreSQL', 'pgvector', 'Redis', 'Docker', 'RAG', 'TypeScript'],
+    icon: '🤖',
+    liveUrl: null,
+    codeUrl: 'https://github.com/trieu123x/AI-workforce',
+    wip: false,
+    images: [awImg1],
+    detail: {
+      role: 'Solo Project – Full-Stack AI Engineer',
+      highlights: [
+        'Designed multi-tenant architecture with tenant isolation, RBAC and per-user tool permission enforcement',
+        'Built hybrid RAG pipeline: semantic chunking → SHA-256 dedup → pgvector HNSW dense retrieval + PostgreSQL FTS sparse retrieval → Reciprocal Rank Fusion',
+        'Integrated BAAI/bge-reranker-v2-m3 cross-encoder reranking with sigmoid scoring and CUDA OOM-safe batch size reduction',
+        'Implemented deterministic intent classifier: Unicode normalization → action+entity pattern matching → SQL tool routing vs. policy RAG',
+        'Deployed Qwen3-Embedding-0.6B (1024-dim) via sentence-transformers with model/version contract to prevent embedding space mixing',
+        'Separated AI Service (stateless, no DB credentials) from Backend (auth, ACL, approval, audit, cost tracking) via internal HTTP + X-AI-Service-Key',
+        'Workflow approval system for sensitive operations; full audit log, session tracking and AI cost monitoring',
+        'CI/CD with GitHub Actions: clean DB migration, backend pytest, frontend lint/build, Docker image validation',
+      ],
+      stack: {
+        AI: ['RAG Pipeline', 'pgvector HNSW', 'Hybrid Search', 'RRF', 'BAAI/bge-reranker-v2-m3', 'Qwen3-Embedding', 'Sentence Transformers', 'Intent Routing'],
+        Backend: ['Python 3.11', 'FastAPI', 'SQLAlchemy', 'Alembic', 'Pydantic', 'PostgreSQL', 'Redis', 'Celery Worker'],
+        Frontend: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'TanStack Query', 'Zustand'],
+        Infrastructure: ['Docker Compose', 'GitHub Actions', 'NVIDIA GPU / CUDA', 'GitHub Container Registry'],
+      },
+    },
+  },
   {
     id: 'k-hospital',
     title: 'K-Hospital – MediCare',

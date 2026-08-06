@@ -28,7 +28,7 @@ const translations = {
       contactBtn: 'Contact me !!',
       githubBtn:  'my-git',
       status:     'Currently working on AI projects',
-      workingOn:  'Currently working on\n  Garbage system',
+      workingOn:  'Currently working on\n  AI-workforce system',
     },
 
     /* ── Quote ── */
@@ -45,6 +45,10 @@ const translations = {
       code:      'Cached',
       comingSoon: 'Coming soon',
       items: [
+        {
+          title: 'AI Workforce – Enterprise AI Platform',
+          desc:  'Multi-tenant enterprise management platform combining business modules with controlled AI assistants. Features HR management, RAG knowledge retrieval with pgvector + hybrid search, intent routing, RBAC, audit logging and Docker-based microservice architecture.',
+        },
         {
           title: 'K-Hospital – MediCare',
           desc:  'Full-stack hospital appointment platform with an end-to-end RAG pipeline: query rewriting, hybrid vector search (pgvector + keyword), and real-time LLM streaming with Gemini fallback handling.',
@@ -153,8 +157,9 @@ const translations = {
       contactBtn: 'Liên hệ ngay !!',
       githubBtn:  'GitHub của tôi',
       status:     'Đang làm việc trên các dự án AI',
-      workingOn:  'Đang phát triển\n  Hệ thống phân loại rác',
+      workingOn:  'Đang phát triển\n  Hệ thống AI-workforce',
     },
+
 
     /* ── Quote ── */
     quote: {
@@ -170,6 +175,10 @@ const translations = {
       code:       'Mã nguồn',
       comingSoon: 'Sắp ra mắt',
       items: [
+        {
+          title: 'AI Workforce – Nền tảng AI Doanh nghiệp',
+          desc:  'Nền tảng quản trị doanh nghiệp đa tenant kết hợp các mô-đun nghiệp vụ với trợ lý AI có kiểm soát. Tích hợp quản lý nhân sự, RAG tìm kiếm tri thức với pgvector + hybrid search, phân loại intent, RBAC, audit log và kiến trúc microservice Docker.',
+        },
         {
           title: 'K-Hospital – MediCare',
           desc:  'Nền tảng đặt lịch khám bệnh full-stack với pipeline RAG: viết lại truy vấn, tìm kiếm vector lai (pgvector + từ khóa), và streaming LLM thời gian thực với xử lý fallback Gemini.',
