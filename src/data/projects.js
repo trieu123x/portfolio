@@ -25,36 +25,70 @@ import exImg3 from '../assets/exclusive3.png';
 
 import weatherImg1 from '../assets/weather.png';
 import lpImg1 from '../assets/license-plate.jpg';
-import awImg1 from '../assets/ai-workforce1.png';
+import awImg1 from '../assets/ai-workforce-ceo.png';
+import awImg2 from '../assets/ai-workforce-rag-chat.png';
+import awImg3 from '../assets/ai-workforce-legal.png';
+import awImg4 from '../assets/ai-workforce-finance.png';
+import awImg5 from '../assets/ai-workforce-approvals.png';
+import awImg6 from '../assets/ai-workforce-knowledge.png';
+import awImg7 from '../assets/ai-workforce-rbac.png';
 
 const projects = [
   {
     id: 'ai-workforce',
-    title: 'AI Workforce – Enterprise AI Platform',
-    desc: 'Multi-tenant enterprise management platform combining business modules with controlled AI assistants. Features HR management, RAG knowledge retrieval with pgvector + hybrid search, intent routing, RBAC, audit logging and Docker-based microservice architecture.',
-    tech: ['Python', 'FastAPI', 'Next.js', 'PostgreSQL', 'pgvector', 'Redis', 'Docker', 'RAG', 'TypeScript'],
+    title: 'AI Workforce – Enterprise Multi-Agent Platform',
+    desc: 'Multi-tenant enterprise platform where AI agents (HR, Legal, Finance, Marketing, Knowledge, CEO Assistant) work alongside employees. Each agent runs on its own LangGraph graph with tool permissions, human-in-the-loop approvals, hybrid RAG over company documents, audit logging and AI cost tracking.',
+    tech: ['Python', 'FastAPI', 'LangGraph', 'LangChain', 'Next.js', 'PostgreSQL', 'pgvector', 'Redis', 'Docker', 'RAG', 'TypeScript'],
     icon: '🤖',
     liveUrl: null,
     codeUrl: 'https://github.com/trieu123x/AI-workforce',
     wip: false,
-    images: [awImg1],
+    images: [awImg1, awImg2, awImg3, awImg4, awImg5, awImg6, awImg7],
     detail: {
       role: 'Solo Project – Full-Stack AI Engineer',
       highlights: [
-        'Designed multi-tenant architecture with tenant isolation, RBAC and per-user tool permission enforcement',
-        'Built hybrid RAG pipeline: semantic chunking → SHA-256 dedup → pgvector HNSW dense retrieval + PostgreSQL FTS sparse retrieval → Reciprocal Rank Fusion',
-        'Integrated BAAI/bge-reranker-v2-m3 cross-encoder reranking with sigmoid scoring and CUDA OOM-safe batch size reduction',
-        'Implemented deterministic intent classifier: Unicode normalization → action+entity pattern matching → SQL tool routing vs. policy RAG',
-        'Deployed Qwen3-Embedding-0.6B (1024-dim) via sentence-transformers with model/version contract to prevent embedding space mixing',
-        'Separated AI Service (stateless, no DB credentials) from Backend (auth, ACL, approval, audit, cost tracking) via internal HTTP + X-AI-Service-Key',
-        'Workflow approval system for sensitive operations; full audit log, session tracking and AI cost monitoring',
+        'Built 6 domain agents (HR, Legal, Finance, Marketing, Knowledge, CEO Assistant), each with its own LangGraph graph, conversation memory, streaming and fallback to the standard flow',
+        'Legal agent: contract review pipeline with risk-clause analysis, approval routing and revised contract file generation',
+        'Finance agent: internal ledger, Excel/CSV import & analysis, draft journal entries with threshold-based approval and in-chat charts; blocks fabricated figures',
+        'CEO Assistant: morning executive briefing, automatic alerts, cross-department metrics, approval inbox and task assignment & tracking',
+        'Hybrid RAG pipeline: PDF/DOCX → Markdown, chunk position metadata + parent context, pgvector HNSW + PostgreSQL FTS → Reciprocal Rank Fusion → cross-encoder reranking',
+        'Tool gateway with a single tool-contract registry: permissions by job position, per-agent document scope and per-tenant model selection (OpenAI / Gemini)',
+        'Separated AI Service (stateless, no DB credentials) from Backend (auth, ACL, approval, audit, cost metering) via internal HTTP',
         'CI/CD with GitHub Actions: clean DB migration, backend pytest, frontend lint/build, Docker image validation',
       ],
       stack: {
-        AI: ['RAG Pipeline', 'pgvector HNSW', 'Hybrid Search', 'RRF', 'BAAI/bge-reranker-v2-m3', 'Qwen3-Embedding', 'Sentence Transformers', 'Intent Routing'],
+        AI: ['LangGraph', 'LangChain', 'Multi-Agent', 'Tool Calling', 'RAG Pipeline', 'pgvector HNSW', 'Hybrid Search', 'RRF', 'Gemini Embedding', 'Jina / BGE Reranker', 'OpenAI / Gemini'],
         Backend: ['Python 3.11', 'FastAPI', 'SQLAlchemy', 'Alembic', 'Pydantic', 'PostgreSQL', 'Redis', 'Celery Worker'],
         Frontend: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'TanStack Query', 'Zustand'],
         Infrastructure: ['Docker Compose', 'GitHub Actions', 'NVIDIA GPU / CUDA', 'GitHub Container Registry'],
+      },
+    },
+  },
+  {
+    id: 'fall-detection',
+    title: 'Fall Detection – Two-Stage Vision Pipeline',
+    desc: 'Video fall detection system. YOLO11s + ByteTrack detects and tracks each person, then an ensemble of SigLIP2 zero-shot and a YOLO11x fall model classifies posture per track, smoothed by majority voting. F1 0.897, recall 0.982 on 900 labeled person crops.',
+    tech: ['Python', 'PyTorch', 'YOLO11', 'YOLOv8', 'ByteTrack', 'SigLIP2', 'Hugging Face', 'OpenCV'],
+    icon: '🚨',
+    liveUrl: null,
+    codeUrl: 'https://github.com/trieu123x/fall-detection',
+    wip: false,
+    images: [],
+    detail: {
+      role: 'Course Project (IoT Applications) – Computer Vision',
+      highlights: [
+        'Fine-tuned a YOLOv8n baseline on the Roboflow fall dataset (fall / non-fall): mAP@50 0.983, mAP@50-95 0.722, precision 0.975, recall 0.971',
+        'Replaced the single-stage detector with a two-stage pipeline: YOLO11s person detection + ByteTrack tracking → posture classification on each track',
+        'Benchmarked 7 Stage-2 candidates (SigLIP2 zero-shot, YOLO11x / YOLO11s / YOLO11n fall models, YOLO11s-pose + keypoint rules, ViT, VideoMAE) on 900 labeled person crops',
+        'OR-ensemble of SigLIP2 zero-shot + YOLO11x reached F1 0.897 with recall 0.982 (VideoMAE baseline: F1 0.393)',
+        'SigLIP2 zero-shot over 6 postures (lying, falling, standing, walking, sitting, bending) using prompt ensembles',
+        'Square letterbox crops keep the person\'s aspect ratio, the key cue separating lying from standing',
+        'Temporal smoothing: re-classify every N frames and majority-vote over the last 5 results per track ID to suppress single-frame noise',
+      ],
+      stack: {
+        'Computer Vision': ['YOLO11', 'YOLOv8', 'ByteTrack', 'OpenCV'],
+        'Vision-Language': ['SigLIP2 (zero-shot)', 'ViT', 'VideoMAE', 'YOLO11-pose'],
+        'ML Framework': ['PyTorch', 'Ultralytics', 'Hugging Face Transformers', 'Kaggle'],
       },
     },
   },

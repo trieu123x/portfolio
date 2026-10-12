@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLang } from '../i18n/LanguageContext';
 
-const NAV_HREF = ['#home', '#projects', '#skills', '#about', '#contact'];
+const NAV_HREF = ['#home', '#experience', '#projects', '#skills', '#about', '#contact'];
 
 export default function Header() {
   const { lang, t, toggleLang } = useLang();
@@ -23,7 +23,7 @@ export default function Header() {
 
   /* active section via IntersectionObserver */
   useEffect(() => {
-    const ids = ['home', 'projects', 'skills', 'about', 'contact'];
+    const ids = ['home', 'experience', 'projects', 'skills', 'about', 'contact'];
     const observers = [];
 
     ids.forEach(id => {

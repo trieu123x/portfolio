@@ -790,6 +790,101 @@ img { max-width: 100%; display: block; }
 .pd-stack-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
 /* ══════════════════════════════════════════
+   EXPERIENCE
+   ══════════════════════════════════════════ */
+.exp-timeline {
+  position: relative;
+  padding-left: 1.75rem;
+  border-left: 1px solid var(--border);
+}
+
+.exp-item { position: relative; }
+.exp-item + .exp-item { margin-top: 2rem; }
+
+.exp-item__dot {
+  position: absolute;
+  left: calc(-1.75rem - 6px);
+  top: 1.4rem;
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  transform: rotate(45deg);
+}
+
+.exp-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  padding: 1.5rem;
+  transition: border-color var(--transition);
+}
+.exp-card:hover { border-color: var(--accent); }
+
+.exp-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.exp-card__role {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.exp-card__team {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+.exp-card__period {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.2rem 0.6rem;
+  background: var(--accent-dim);
+}
+
+.exp-card__summary {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.exp-card__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.25rem;
+}
+.exp-card__bullets li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+.exp-card__bullets li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.exp-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* ══════════════════════════════════════════
    SKILLS
    ══════════════════════════════════════════ */
 .skills__layout {
@@ -1078,9 +1173,14 @@ img { max-width: 100%; display: block; }
   .about__grid     { grid-template-columns: 1fr; }
   .contact__grid   { grid-template-columns: 1fr; }
   .social-sidebar  { display: none; }
+  .nav__list       { gap: 1.25rem; }
 }
 
 @media (max-width: 640px) {
+  .exp-timeline    { padding-left: 1.25rem; }
+  .exp-item__dot   { left: calc(-1.25rem - 6px); }
+  .exp-card        { padding: 1.1rem; }
+  .exp-card__head  { flex-direction: column; gap: 0.6rem; }
   .nav__list { display: none; flex-direction: column; }
   .nav__list.open {
     display: flex;

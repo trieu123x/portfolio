@@ -7,8 +7,9 @@ const translations = {
   en: {
     /* ── Nav ── */
     nav: {
-      home:     '#home',
-      projects: '#projects',
+      home:       '#home',
+      experience: '#experience',
+      projects:   '#projects',
       skills:   '#skills',
       about:    '#about-me',
       contact:  '#contacts',
@@ -37,6 +38,28 @@ const translations = {
       author: '— Đinh Hải Triều',
     },
 
+    /* ── Experience ── */
+    experience: {
+      title: 'experience',
+      items: [
+        {
+          company:  'Yopaz',
+          role:     'AI Engineer Intern',
+          team:     'R&D Team',
+          period:   'Jul 2026 – Oct 2026',
+          location: 'Hanoi, Vietnam',
+          summary:  'Yopaz is a software company in Hanoi with a branch in Tokyo, building software for Japanese clients. In the R&D team, I built AI solutions with vision-language models and LLM agents.',
+          bullets: [
+            'CAD 2D → 3D Mapping: used a VLM (self-hosted vLLM / Gemini / OpenAI) to read dimension and GD&T annotations from rendered DXF drawings, grounding outputs to allow-listed geometry IDs to prevent hallucination',
+            'Mapped recognized annotations to STEP 3D features via top-K retrieval and scoring, with schema validation and human review',
+            'Marketing Agent: LangGraph agent turning a brief into Facebook / Instagram / Threads posts with hybrid RAG, a fact-check self-refine loop and 2 human-approval steps (interrupt / resume)',
+            'Built the Marketing Agent in 5 days with FastAPI + SSE streaming and per-call token cost tracking',
+          ],
+          tech: ['Python', 'VLM', 'vLLM', 'Gemini', 'OpenAI', 'LangGraph', 'FastAPI', 'RAG', 'pgvector', 'SSE'],
+        },
+      ],
+    },
+
     /* ── Projects ── */
     projects: {
       title:     'projects',
@@ -46,8 +69,12 @@ const translations = {
       comingSoon: 'Coming soon',
       items: [
         {
-          title: 'AI Workforce – Enterprise AI Platform',
-          desc:  'Multi-tenant enterprise management platform combining business modules with controlled AI assistants. Features HR management, RAG knowledge retrieval with pgvector + hybrid search, intent routing, RBAC, audit logging and Docker-based microservice architecture.',
+          title: 'AI Workforce – Enterprise Multi-Agent Platform',
+          desc:  'Multi-tenant enterprise platform where AI agents (HR, Legal, Finance, Marketing, Knowledge, CEO Assistant) work alongside employees. Each agent runs on its own LangGraph graph with tool permissions, human-in-the-loop approvals, hybrid RAG over company documents, audit logging and AI cost tracking.',
+        },
+        {
+          title: 'Fall Detection – Two-Stage Vision Pipeline',
+          desc:  'Video fall detection system. YOLO11s + ByteTrack detects and tracks each person, then an ensemble of SigLIP2 zero-shot and a YOLO11x fall model classifies posture per track, smoothed by majority voting. F1 0.897, recall 0.982 on 900 labeled person crops.',
         },
         {
           title: 'K-Hospital – MediCare',
@@ -136,8 +163,9 @@ const translations = {
   vi: {
     /* ── Nav ── */
     nav: {
-      home:     '#trang chủ',
-      projects: '#dự án',
+      home:       '#trang chủ',
+      experience: '#kinh nghiệm',
+      projects:   '#dự án',
       skills:   '#kỹ năng',
       about:    '#về tôi',
       contact:  '#liên hệ',
@@ -167,6 +195,28 @@ const translations = {
       author: '— Đinh Hải Triều',
     },
 
+    /* ── Experience ── */
+    experience: {
+      title: 'kinh-nghiệm',
+      items: [
+        {
+          company:  'Yopaz',
+          role:     'Thực tập sinh AI Engineer',
+          team:     'Team R&D',
+          period:   '07/2026 – 10/2026',
+          location: 'Hà Nội, Việt Nam',
+          summary:  'Yopaz là công ty phần mềm tại Hà Nội, có chi nhánh ở Tokyo, phát triển phần mềm cho khách hàng Nhật Bản. Trong team R&D, tôi xây dựng các giải pháp AI với mô hình thị giác–ngôn ngữ (VLM) và LLM agent.',
+          bullets: [
+            'CAD 2D → 3D Mapping: dùng VLM (vLLM tự host / Gemini / OpenAI) đọc kích thước và chú thích GD&T từ bản vẽ DXF đã render, ràng buộc kết quả vào danh sách ID hình học hợp lệ để chống bịa',
+            'Map các chú thích nhận diện được sang feature 3D trong file STEP bằng top-K retrieval và chấm điểm, có kiểm tra schema và người duyệt',
+            'Marketing Agent: agent LangGraph biến brief thành bài đăng Facebook / Instagram / Threads với hybrid RAG, vòng fact-check tự sửa và 2 bước người duyệt (interrupt / resume)',
+            'Xây dựng Marketing Agent trong 5 ngày với FastAPI + SSE streaming và theo dõi chi phí token cho từng lần gọi',
+          ],
+          tech: ['Python', 'VLM', 'vLLM', 'Gemini', 'OpenAI', 'LangGraph', 'FastAPI', 'RAG', 'pgvector', 'SSE'],
+        },
+      ],
+    },
+
     /* ── Projects ── */
     projects: {
       title:      'dự-án',
@@ -176,8 +226,12 @@ const translations = {
       comingSoon: 'Sắp ra mắt',
       items: [
         {
-          title: 'AI Workforce – Nền tảng AI Doanh nghiệp',
-          desc:  'Nền tảng quản trị doanh nghiệp đa tenant kết hợp các mô-đun nghiệp vụ với trợ lý AI có kiểm soát. Tích hợp quản lý nhân sự, RAG tìm kiếm tri thức với pgvector + hybrid search, phân loại intent, RBAC, audit log và kiến trúc microservice Docker.',
+          title: 'AI Workforce – Nền tảng Đa tác tử cho Doanh nghiệp',
+          desc:  'Nền tảng doanh nghiệp đa tenant, nơi các AI agent (Nhân sự, Pháp chế, Tài chính, Marketing, Tri thức, Trợ lý CEO) làm việc cùng nhân viên. Mỗi agent chạy trên một graph LangGraph riêng, có phân quyền tool, phê duyệt human-in-the-loop, hybrid RAG trên tài liệu công ty, audit log và theo dõi chi phí AI.',
+        },
+        {
+          title: 'Phát hiện Té ngã – Pipeline Thị giác 2 tầng',
+          desc:  'Hệ thống phát hiện té ngã từ video. YOLO11s + ByteTrack phát hiện và theo dõi từng người, sau đó tổ hợp SigLIP2 zero-shot và model té ngã YOLO11x phân loại tư thế trên từng track, làm mượt bằng bỏ phiếu đa số. F1 0.897, recall 0.982 trên 900 ảnh crop người có nhãn.',
         },
         {
           title: 'K-Hospital – MediCare',
