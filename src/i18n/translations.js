@@ -132,7 +132,7 @@ const translations = {
       para2c:   '. My focus is on building scalable AI solutions — from RAG pipelines to real-time object detection systems.',
       para3:    'Currently seeking an',
       para3b:   'position to leverage my experience and contribute to production-grade AI systems while refining skills in model optimization and deployment.',
-      aiIntern: 'AI Intern',
+      aiEngineer: 'AI Engineer',
       genAI:    'Generative AI',
       cv:       'Computer Vision',
       facts: [
@@ -289,7 +289,7 @@ const translations = {
       para2c:   '. Tập trung xây dựng giải pháp AI có thể mở rộng — từ pipeline RAG đến hệ thống phát hiện đối tượng thời gian thực.',
       para3:    'Hiện đang tìm kiếm vị trí',
       para3b:   'để tận dụng kinh nghiệm và đóng góp vào hệ thống AI production trong khi trau dồi kỹ năng tối ưu hóa và triển khai mô hình.',
-      aiIntern: 'AI Intern',
+      aiEngineer: 'AI Engineer',
       genAI:    'Generative AI',
       cv:       'Computer Vision',
       facts: [

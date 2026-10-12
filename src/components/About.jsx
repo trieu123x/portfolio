@@ -32,7 +32,7 @@ export default function About() {
             </p>
             <p className="about__para">
               {a.para3}{' '}
-              <span className="accent">{a.aiIntern}</span>{' '}
+              <span className="accent">{a.aiEngineer}</span>{' '}
               {a.para3b}
             </p>
             <a href="#contact" className="btn btn--primary" id="aboutContactBtn">
@@ -52,7 +52,7 @@ export default function About() {
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;<span className="mono accent">"role"</span>
                 <span className="mono">: </span>
-                <span className="mono">"AI Intern",</span>
+                <span className="mono">"AI Engineer",</span>
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;<span className="mono accent">"gpa"</span>
                 <span className="mono">: </span>
