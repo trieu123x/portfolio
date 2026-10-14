@@ -50,12 +50,10 @@ const translations = {
           location: 'Hanoi, Vietnam',
           summary:  'Yopaz is a software company in Hanoi with a branch in Tokyo, building software for Japanese clients. In the R&D team, I built AI solutions with vision-language models and LLM agents.',
           bullets: [
-            'CAD 2D → 3D Mapping: used a VLM (self-hosted vLLM / Gemini / OpenAI) to read dimension and GD&T annotations from rendered DXF drawings, grounding outputs to allow-listed geometry IDs to prevent hallucination',
-            'Mapped recognized annotations to STEP 3D features via top-K retrieval and scoring, with schema validation and human review',
-            'Marketing Agent: LangGraph agent turning a brief into Facebook / Instagram / Threads posts with hybrid RAG, a fact-check self-refine loop and 2 human-approval steps (interrupt / resume)',
-            'Built the Marketing Agent in 5 days with FastAPI + SSE streaming and per-call token cost tracking',
+            'CAD Drawing Analysis: used a VLM to read annotations from 2D engineering drawings and link them to 3D models',
+            'Marketing Agent: built an LLM agent that generates social media posts, with RAG and human approval',
           ],
-          tech: ['Python', 'VLM', 'vLLM', 'Gemini', 'OpenAI', 'LangGraph', 'FastAPI', 'RAG', 'pgvector', 'SSE'],
+          tech: ['Python', 'VLM', 'LLM Agent', 'LangGraph', 'RAG', 'FastAPI'],
         },
       ],
     },
@@ -82,7 +80,7 @@ const translations = {
         },
         {
           title: 'Garbage Classification System',
-          desc:  'Real-time 12-class garbage detection & classification. Two-stage pipeline: YOLOv8 for detection + ResNet50 for classification. Achieved mAP@50: 0.83, accuracy: 0.84.',
+          desc:  'Real-time 12-class garbage detection & classification. Two-stage pipeline: YOLOv8 for detection + ResNet50 for classification. Achieved mAP@50: 0.86, accuracy: 0.93.',
         },
         {
           title: 'License Plate Recognition System',
@@ -207,12 +205,10 @@ const translations = {
           location: 'Hà Nội, Việt Nam',
           summary:  'Yopaz là công ty phần mềm tại Hà Nội, có chi nhánh ở Tokyo, phát triển phần mềm cho khách hàng Nhật Bản. Trong team R&D, tôi xây dựng các giải pháp AI với mô hình thị giác–ngôn ngữ (VLM) và LLM agent.',
           bullets: [
-            'CAD 2D → 3D Mapping: dùng VLM (vLLM tự host / Gemini / OpenAI) đọc kích thước và chú thích GD&T từ bản vẽ DXF đã render, ràng buộc kết quả vào danh sách ID hình học hợp lệ để chống bịa',
-            'Map các chú thích nhận diện được sang feature 3D trong file STEP bằng top-K retrieval và chấm điểm, có kiểm tra schema và người duyệt',
-            'Marketing Agent: agent LangGraph biến brief thành bài đăng Facebook / Instagram / Threads với hybrid RAG, vòng fact-check tự sửa và 2 bước người duyệt (interrupt / resume)',
-            'Xây dựng Marketing Agent trong 5 ngày với FastAPI + SSE streaming và theo dõi chi phí token cho từng lần gọi',
+            'Phân tích bản vẽ CAD: dùng VLM đọc chú thích trên bản vẽ kỹ thuật 2D và liên kết với mô hình 3D',
+            'Marketing Agent: xây dựng LLM agent tạo bài đăng mạng xã hội, có RAG và bước người duyệt',
           ],
-          tech: ['Python', 'VLM', 'vLLM', 'Gemini', 'OpenAI', 'LangGraph', 'FastAPI', 'RAG', 'pgvector', 'SSE'],
+          tech: ['Python', 'VLM', 'LLM Agent', 'LangGraph', 'RAG', 'FastAPI'],
         },
       ],
     },
@@ -239,7 +235,7 @@ const translations = {
         },
         {
           title: 'Phân loại rác thải',
-          desc:  'Phát hiện & phân loại rác thải thời gian thực 12 lớp. Pipeline 2 tầng: YOLOv8 để phát hiện + ResNet50 để phân loại. Đạt mAP@50: 0.83, độ chính xác: 0.84.',
+          desc:  'Phát hiện & phân loại rác thải thời gian thực 12 lớp. Pipeline 2 tầng: YOLOv8 để phát hiện + ResNet50 để phân loại. Đạt mAP@50: 0.86, độ chính xác: 0.93.',
         },
         {
           title: 'Nhận diện Biển số xe',

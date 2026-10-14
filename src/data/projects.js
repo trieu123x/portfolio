@@ -122,7 +122,7 @@ const projects = [
   {
     id: 'garbage-classify',
     title: 'Garbage Classification System',
-    desc: 'Real-time 12-class garbage detection & classification. Two-stage pipeline: YOLOv8 for detection + ResNet50 for classification. Achieved mAP@50: 0.83, accuracy: 0.84.',
+    desc: 'Real-time 12-class garbage detection & classification. Two-stage pipeline: YOLOv8 for detection + ResNet50 for classification. Achieved mAP@50: 0.86, accuracy: 0.93.',
     tech: ['PyTorch', 'YOLOv8', 'ResNet50', 'Flask', 'OpenCV', 'CUDA'],
     icon: '♻️',
     liveUrl: 'https://huggingface.co/spaces/trieu123x/Garbage-Detection-and-Classification',
@@ -133,11 +133,11 @@ const projects = [
       role: 'Solo Project',
       highlights: [
         'Trained YOLOv8 on custom dataset for object detection across 12 garbage classes',
-        'Fine-tuned ResNet50 for classification stage, achieving 84% accuracy on test set',
+        'Fine-tuned ResNet50 for classification stage, achieving 93% validation accuracy',
         'Built two-stage pipeline: YOLO detects bounding boxes → ResNet classifies crop',
         'Deployed as Flask web app with real-time webcam and image upload support',
         'Optimized inference with CUDA acceleration on GPU',
-        'Achieved mAP@50 of 0.83 on validation set',
+        'Achieved mAP@50 of 0.86 on validation set (precision 0.91, recall 0.84)',
       ],
       stack: {
         'Computer Vision': ['YOLOv8', 'ResNet50', 'OpenCV', 'CUDA'],
